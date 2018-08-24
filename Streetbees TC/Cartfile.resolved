@@ -1,1 +1,5 @@
-github "BrunoMiguens/NetworkingKit" "0.3.1"
+github "Alamofire/Alamofire" "4.7.3"
+github "antitypical/Result" "3.2.4"
+github "ReactiveX/RxSwift" "4.2.0"
+github "ReactiveCocoa/ReactiveSwift" "3.1.0"
+github "Moya/Moya" "11.0.2"
