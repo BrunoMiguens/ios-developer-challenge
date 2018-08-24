@@ -13,6 +13,7 @@
 		96E27B6721303D36007E032F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E27B6621303D36007E032F /* Assets.xcassets */; };
 		96E27B6A21303D36007E032F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E27B6821303D36007E032F /* LaunchScreen.storyboard */; };
 		96E27B7521303D36007E032F /* Streetbees_TCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E27B7421303D36007E032F /* Streetbees_TCTests.swift */; };
+		96E27B8821303F18007E032F /* NetworkingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E27B8721303F18007E032F /* NetworkingKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		96E27B7021303D36007E032F /* Streetbees TCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Streetbees TCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E27B7421303D36007E032F /* Streetbees_TCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streetbees_TCTests.swift; sourceTree = "<group>"; };
 		96E27B7621303D36007E032F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96E27B8721303F18007E032F /* NetworkingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkingKit.framework; path = Carthage/Build/iOS/NetworkingKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E27B8821303F18007E032F /* NetworkingKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,7 @@
 				96E27B5E21303D33007E032F /* Streetbees TC */,
 				96E27B7321303D36007E032F /* Streetbees TCTests */,
 				96E27B5D21303D33007E032F /* Products */,
+				96E27B8621303F18007E032F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +105,7 @@
 				96E27B8321303DD0007E032F /* Views */,
 				96E27B8521303DDC007E032F /* Models */,
 				96E27B8421303DD6007E032F /* ViewModels */,
+				96E27B8A21303F6C007E032F /* Components */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -152,6 +157,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		96E27B8621303F18007E032F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96E27B8721303F18007E032F /* NetworkingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96E27B8A21303F6C007E032F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +182,7 @@
 				96E27B5821303D33007E032F /* Sources */,
 				96E27B5921303D33007E032F /* Frameworks */,
 				96E27B5A21303D33007E032F /* Resources */,
+				96E27B8921303F1E007E032F /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -247,6 +268,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		96E27B8921303F1E007E032F /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/NetworkingKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NetworkingKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		96E27B5821303D33007E032F /* Sources */ = {
@@ -416,6 +456,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JHLNX87873;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Streetbees TC/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -435,6 +479,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JHLNX87873;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Streetbees TC/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
