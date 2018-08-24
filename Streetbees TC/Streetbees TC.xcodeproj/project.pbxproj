@@ -31,6 +31,7 @@
 		96F7BCAF213090E500E9B565 /* ComicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7BCAD213090E500E9B565 /* ComicCollectionViewCell.swift */; };
 		96F7BCB0213090E500E9B565 /* ComicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F7BCAE213090E500E9B565 /* ComicCollectionViewCell.xib */; };
 		96F7BCB221309CEE00E9B565 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F7BCB121309CEE00E9B565 /* SDWebImage.framework */; };
+		96F7BCB42130AA9E00E9B565 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F7BCB32130AA9E00E9B565 /* NVActivityIndicatorView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		96F7BCAD213090E500E9B565 /* ComicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCollectionViewCell.swift; sourceTree = "<group>"; };
 		96F7BCAE213090E500E9B565 /* ComicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComicCollectionViewCell.xib; sourceTree = "<group>"; };
 		96F7BCB121309CEE00E9B565 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		96F7BCB32130AA9E00E9B565 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F7BCB42130AA9E00E9B565 /* NVActivityIndicatorView.framework in Frameworks */,
 				96F7BCB221309CEE00E9B565 /* SDWebImage.framework in Frameworks */,
 				96E27B9B21304AEC007E032F /* Result.framework in Frameworks */,
 				96E27B9921304AD2007E032F /* Moya.framework in Frameworks */,
@@ -205,6 +208,7 @@
 		96E27B8621303F18007E032F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96F7BCB32130AA9E00E9B565 /* NVActivityIndicatorView.framework */,
 				96F7BCB121309CEE00E9B565 /* SDWebImage.framework */,
 				96E27B9A21304AEC007E032F /* Result.framework */,
 				96E27B9621304841007E032F /* Alamofire.framework */,
@@ -386,6 +390,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -393,6 +398,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

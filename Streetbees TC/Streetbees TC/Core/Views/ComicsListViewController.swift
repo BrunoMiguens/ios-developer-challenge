@@ -19,6 +19,7 @@ class ComicsListViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.reloadHandler = reload
+        viewModel.setupLoader(for: view)
         viewModel.setup(collectionView: collectionView)
         
         viewModel.loadComics()

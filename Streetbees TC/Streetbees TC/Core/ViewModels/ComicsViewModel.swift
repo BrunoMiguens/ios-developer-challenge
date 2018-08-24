@@ -9,10 +9,14 @@
 import UIKit
 import Moya
 import Result
+import NVActivityIndicatorView
 
 class ComicsViewModel {
     
     fileprivate let padding: CGFloat = 10
+    fileprivate let loaderSize: CGFloat = 75
+    
+    fileprivate var loader: NVActivityIndicatorView?
     fileprivate let service: MoyaProvider<MarvelService> = .init()
     fileprivate var data: [Comic] = [] {
         didSet {
@@ -48,6 +52,16 @@ extension ComicsViewModel {
         collection.register(UINib(nibName: ComicCollectionViewCell.id, bundle: nil), forCellWithReuseIdentifier: ComicCollectionViewCell.id)
     }
     
+    func setupLoader(for view: UIView) {
+        let y = (view.bounds.size.height / 2) - loaderSize / 2
+        let x = (view.bounds.size.width / 2) - loaderSize / 2
+        let rect = CGRect(x: x, y: y, width: loaderSize, height: loaderSize)
+        
+        let loaderView = NVActivityIndicatorView(frame: rect, type: .ballScaleMultiple, color: .lightGray, padding: padding)
+        view.addSubview(loaderView)
+        loader = loaderView
+    }
+    
     func comic(at index: Int) -> Comic? {
         guard index < data.count else { return nil }
         return data[index]
@@ -58,6 +72,7 @@ extension ComicsViewModel {
 extension ComicsViewModel {
     
     func loadComics() {
+        loader?.startAnimating()
         service.request(.comics, completion: validateResponse)
     }
     
@@ -89,6 +104,8 @@ fileprivate extension ComicsViewModel {
         default: break
             
         }
+        
+        loader?.stopAnimating()
     }
     
     func transformData(object: Response) {
