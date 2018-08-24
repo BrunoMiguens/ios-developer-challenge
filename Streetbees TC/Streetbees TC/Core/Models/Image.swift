@@ -8,9 +8,22 @@
 
 import Foundation
 
-struct ImageResult {
+struct Image {
     
     let path: String
     let fileExtension: String
+    
+    init(dictionary: TCDictionary) {
+        path = dictionary.string(MarvelKey.Api.imagePath)
+        fileExtension = dictionary.string(MarvelKey.Api.fileExtension)
+    }
+    
+}
+
+extension Image {
+    
+    var url: URL? {
+        return URL(string: "\(path).\(fileExtension)")
+    }
     
 }

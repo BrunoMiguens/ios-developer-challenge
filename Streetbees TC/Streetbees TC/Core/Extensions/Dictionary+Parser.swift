@@ -1,6 +1,6 @@
 //
 //  Dictionary+Parser.swift
-//  7egend TC
+//  Streetbees TC
 //
 //  Created by Bruno Filipe Martins da Silva Miguêns on 16/08/18.
 //  Copyright © 2018 Bruno Filipe Miguêns. All rights reserved.
@@ -9,6 +9,16 @@
 import Foundation
 
 extension Dictionary where Key == String {
+    
+    func int(key: String) -> Int {
+        var output: Int = 0
+        if let value = self[key] as? Int {
+            output = value
+        } else if let number = self[key] as? NSNumber {
+            output = number.intValue
+        }
+        return output
+    }
     
     func string(key: String) -> String {
         var output: String = ""

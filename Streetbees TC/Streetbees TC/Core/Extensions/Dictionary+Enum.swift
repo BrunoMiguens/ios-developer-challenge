@@ -1,6 +1,6 @@
 //
 //  Dictionary+Enum.swift
-//  7egend TC
+//  Streetbees TC
 //
 //  Created by Bruno Filipe Martins da Silva Miguêns on 16/08/18.
 //  Copyright © 2018 Bruno Filipe Miguêns. All rights reserved.
@@ -12,6 +12,11 @@ typealias TCArray = [Any]
 typealias TCDictionary = [String: Any]
 
 extension Dictionary where Key == String {
+    
+    func int<T: RawRepresentable>(_ key: T) -> Int
+        where T.RawValue == String {
+            return int(key: key.rawValue)
+    }
     
     func string<T: RawRepresentable>(_ key: T) -> String
         where T.RawValue == String {

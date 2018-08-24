@@ -13,7 +13,7 @@ class MarvelAuth {
     fileprivate let fileName: String = "marvel_keys"
     fileprivate let fileType: String = "plist"
     
-    fileprivate var cache: [String: Any] = [:]
+    fileprivate var cache: TCDictionary = [:]
     
     static let shared = MarvelAuth()
     
@@ -33,7 +33,7 @@ extension MarvelAuth {
         return cache.string(MarvelKey.Local.publicKey)
     }
     
-    var authParameters: [String: Any] {
+    var authParameters: TCDictionary {
         let timestamp = Date().timeIntervalSince1970.description
         let hash = (timestamp + privateKey + publicKey).utf8.md5
         return ["apikey": publicKey, "ts": timestamp, "hash": hash]
@@ -47,7 +47,7 @@ extension MarvelAuth {
         guard let path = Bundle.main.path(forResource: fileName, ofType: fileType),
             let info = NSDictionary(contentsOfFile: path) else { return }
         
-        guard let dicitonary = info as? [String: Any] else { return }
+        guard let dicitonary = info as? TCDictionary else { return }
         
         cache = dicitonary
     }

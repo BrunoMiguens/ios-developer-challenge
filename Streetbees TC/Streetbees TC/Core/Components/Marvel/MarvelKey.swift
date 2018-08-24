@@ -17,4 +17,23 @@ extension MarvelKey {
         case privateKey
     }
     
+    enum Api: String {
+        
+        case data
+        case results
+        
+        case id
+        case title
+        case issueNumber
+        case description
+        case isbn
+        case pageCount
+        case thumbnail
+        case images
+        case prices
+        
+        case imagePath = "path"
+        case fileExtension = "extension"
+    }
+    
 }
