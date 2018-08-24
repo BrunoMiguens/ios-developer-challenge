@@ -26,7 +26,10 @@ class ComicCollectionViewCell: UICollectionViewCell {
 extension ComicCollectionViewCell {
     
     func updateLayout() {
-       imageView.sd_setImage(with: comic?.thumbnail.url)
+        guard let object = comic else { return }
+        
+       imageView.sd_setImage(with: object.thumbnail.url)
+       imageView.contentMode = object.thumbnail.contentMode
     }
     
 }

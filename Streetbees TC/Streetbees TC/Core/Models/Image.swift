@@ -6,7 +6,7 @@
 //  Copyright © 2018 Bruno Filipe Miguêns. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Image {
     
@@ -24,6 +24,12 @@ extension Image {
     
     var url: URL? {
         return URL(string: "\(path).\(fileExtension)")
+    }
+    
+    var contentMode: UIViewContentMode {
+        guard let link = url else { return .scaleToFill }
+        guard !link.absoluteString.contains("image_not_available") else { return .scaleToFill }
+        return .scaleAspectFill
     }
     
 }

@@ -34,12 +34,11 @@ extension MarvelService: TargetType {
     
     var task: Task {
         
-        var parameters = MarvelAuth.shared.authParameters
+        let parameters = MarvelAuth.shared.authParameters
         
         switch self {
             
-        case .comics (let format):
-            parameters["format"] = format.rawValue
+        case .comics:
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
             
         }

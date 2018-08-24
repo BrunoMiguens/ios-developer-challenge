@@ -10,6 +10,6 @@ import Foundation
 
 enum MarvelService {
     
-    case comics(format: MarvelFormat)
+    case comics
     
 }

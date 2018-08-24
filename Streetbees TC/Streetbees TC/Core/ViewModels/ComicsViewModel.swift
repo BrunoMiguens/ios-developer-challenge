@@ -12,7 +12,7 @@ import Result
 
 class ComicsViewModel {
     
-    fileprivate let padding: CGFloat = 20
+    fileprivate let padding: CGFloat = 10
     fileprivate let service: MoyaProvider<MarvelService> = .init()
     fileprivate var data: [Comic] = [] {
         didSet {
@@ -40,8 +40,8 @@ extension ComicsViewModel {
         layout.minimumInteritemSpacing = padding
         layout.scrollDirection = .horizontal
         
-        let height = collection.bounds.size.height / 4
-        layout.itemSize = .init(width: height - 50, height: height)
+        let width = (collection.bounds.size.width / 3)
+        layout.itemSize = .init(width: width, height: width + 50)
         
         collection.collectionViewLayout = layout
         
@@ -58,7 +58,7 @@ extension ComicsViewModel {
 extension ComicsViewModel {
     
     func loadComics() {
-        service.request(.comics(format: .comic), completion: validateResponse)
+        service.request(.comics, completion: validateResponse)
     }
     
     var numberOfRows: Int {
