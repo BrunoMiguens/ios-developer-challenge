@@ -24,6 +24,7 @@
 		96E27BA5213051E8007E032F /* MarvelKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E27BA4213051E8007E032F /* MarvelKey.swift */; };
 		96E27BA92130526E007E032F /* Dictionary+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E27BA72130526E007E032F /* Dictionary+Parser.swift */; };
 		96E27BAA2130526E007E032F /* Dictionary+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E27BA82130526E007E032F /* Dictionary+Enum.swift */; };
+		96F7BCA5213059E300E9B565 /* MarvelFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7BCA4213059E300E9B565 /* MarvelFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		96E27BA4213051E8007E032F /* MarvelKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelKey.swift; sourceTree = "<group>"; };
 		96E27BA72130526E007E032F /* Dictionary+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Parser.swift"; sourceTree = "<group>"; };
 		96E27BA82130526E007E032F /* Dictionary+Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Enum.swift"; sourceTree = "<group>"; };
+		96F7BCA4213059E300E9B565 /* MarvelFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelFormat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,8 +199,8 @@
 		96E27B8A21303F6C007E032F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				96F7BCA22130597900E9B565 /* Networking */,
 				96E27BA3213051B8007E032F /* Marvel */,
+				96F7BCA22130597900E9B565 /* Networking */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -214,6 +216,7 @@
 		96E27BA3213051B8007E032F /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				96F7BCA3213059B800E9B565 /* Api */,
 				96E27BA4213051E8007E032F /* MarvelKey.swift */,
 				96E27BA121305059007E032F /* MarvelAuth.swift */,
 			);
@@ -236,6 +239,14 @@
 				96E27B92213045D1007E032F /* MarvelService+Target.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		96F7BCA3213059B800E9B565 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				96F7BCA4213059E300E9B565 /* MarvelFormat.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +382,7 @@
 				96E27BA5213051E8007E032F /* MarvelKey.swift in Sources */,
 				96E27B91213045A1007E032F /* MarvelService.swift in Sources */,
 				96E27B6021303D33007E032F /* AppDelegate.swift in Sources */,
+				96F7BCA5213059E300E9B565 /* MarvelFormat.swift in Sources */,
 				96E27B9E21304EDC007E032F /* MD5Digest.swift in Sources */,
 				96E27B93213045D1007E032F /* MarvelService+Target.swift in Sources */,
 			);
