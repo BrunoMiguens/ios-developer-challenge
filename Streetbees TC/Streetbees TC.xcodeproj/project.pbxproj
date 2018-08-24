@@ -32,6 +32,9 @@
 		96F7BCB0213090E500E9B565 /* ComicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F7BCAE213090E500E9B565 /* ComicCollectionViewCell.xib */; };
 		96F7BCB221309CEE00E9B565 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F7BCB121309CEE00E9B565 /* SDWebImage.framework */; };
 		96F7BCB42130AA9E00E9B565 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F7BCB32130AA9E00E9B565 /* NVActivityIndicatorView.framework */; };
+		96F7BCB62130AE7400E9B565 /* ComicsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7BCB52130AE7400E9B565 /* ComicsDetailViewController.swift */; };
+		96F7BCB82130B0E500E9B565 /* TCStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7BCB72130B0E500E9B565 /* TCStoryboard.swift */; };
+		96F7BCBA2130B94200E9B565 /* ComicsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7BCB92130B94200E9B565 /* ComicsDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		96F7BCAE213090E500E9B565 /* ComicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComicCollectionViewCell.xib; sourceTree = "<group>"; };
 		96F7BCB121309CEE00E9B565 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		96F7BCB32130AA9E00E9B565 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		96F7BCB52130AE7400E9B565 /* ComicsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDetailViewController.swift; sourceTree = "<group>"; };
+		96F7BCB72130B0E500E9B565 /* TCStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCStoryboard.swift; sourceTree = "<group>"; };
+		96F7BCB92130B94200E9B565 /* ComicsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,7 @@
 				96F7BCAC213090CF00E9B565 /* Cells */,
 				96E27B6321303D33007E032F /* Main.storyboard */,
 				96E27B6821303D36007E032F /* LaunchScreen.storyboard */,
+				96F7BCB72130B0E500E9B565 /* TCStoryboard.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				96E27B6121303D33007E032F /* ComicsListViewController.swift */,
+				96F7BCB52130AE7400E9B565 /* ComicsDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				96F7BCAA213087A600E9B565 /* ComicsViewModel.swift */,
+				96F7BCB92130B94200E9B565 /* ComicsDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -413,6 +422,8 @@
 			files = (
 				96F7BCAF213090E500E9B565 /* ComicCollectionViewCell.swift in Sources */,
 				96E27BA92130526E007E032F /* Dictionary+Parser.swift in Sources */,
+				96F7BCB62130AE7400E9B565 /* ComicsDetailViewController.swift in Sources */,
+				96F7BCBA2130B94200E9B565 /* ComicsDetailViewModel.swift in Sources */,
 				96F7BCA921307EEC00E9B565 /* Image.swift in Sources */,
 				96E27BA221305059007E032F /* MarvelAuth.swift in Sources */,
 				96E27B6221303D33007E032F /* ComicsListViewController.swift in Sources */,
@@ -423,6 +434,7 @@
 				96F7BCA721307DFB00E9B565 /* Comic.swift in Sources */,
 				96F7BCA5213059E300E9B565 /* MarvelFormat.swift in Sources */,
 				96F7BCAB213087A600E9B565 /* ComicsViewModel.swift in Sources */,
+				96F7BCB82130B0E500E9B565 /* TCStoryboard.swift in Sources */,
 				96E27B9E21304EDC007E032F /* MD5Digest.swift in Sources */,
 				96E27B93213045D1007E032F /* MarvelService+Target.swift in Sources */,
 			);

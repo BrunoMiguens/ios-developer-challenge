@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +13,7 @@
         <!--Comics List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ComicsListViewController" customModule="Streetbees_TC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComicsListViewController" id="BYZ-38-t0r" customClass="ComicsListViewController" customModule="Streetbees_TC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,6 +30,7 @@
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="2hi-3K-O6q"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zSn-nO-b62"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -47,6 +49,85 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Comics Detail View Controller-->
+        <scene sceneID="EVw-as-CMp">
+            <objects>
+                <viewController storyboardIdentifier="ComicsDetailViewController" id="7LT-cp-XWu" customClass="ComicsDetailViewController" customModule="Streetbees_TC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vkx-V8-bxx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aXb-NA-FYK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ecm-Ln-7DC">
+                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mAq-uz-T8J">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2L-UB-WNl">
+                                            <rect key="frame" x="16" y="16" width="45" height="33"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <state key="normal" title="Close">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="hasClickedCloseButtonWithSender:" destination="7LT-cp-XWu" eventType="touchUpInside" id="OK1-7E-cT4"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqV-O6-J8T">
+                                            <rect key="frame" x="16" y="79" width="48" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Bhe-3J-v9w">
+                                            <rect key="frame" x="16" y="125" width="90.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="n2L-UB-WNl" firstAttribute="top" secondItem="mAq-uz-T8J" secondAttribute="top" constant="16" id="6Ao-3j-xEU"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bhe-3J-v9w" secondAttribute="bottom" constant="16" id="BbZ-Sy-gfe"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n2L-UB-WNl" secondAttribute="trailing" constant="20" symbolic="YES" id="E7c-V9-NIQ"/>
+                                        <constraint firstItem="Bhe-3J-v9w" firstAttribute="top" secondItem="lqV-O6-J8T" secondAttribute="bottom" constant="16" id="Is0-ha-qSQ"/>
+                                        <constraint firstItem="lqV-O6-J8T" firstAttribute="leading" secondItem="mAq-uz-T8J" secondAttribute="leading" constant="16" id="NYi-z7-ncc"/>
+                                        <constraint firstItem="n2L-UB-WNl" firstAttribute="leading" secondItem="mAq-uz-T8J" secondAttribute="leading" constant="16" id="NlB-An-9tj"/>
+                                        <constraint firstItem="Bhe-3J-v9w" firstAttribute="leading" secondItem="mAq-uz-T8J" secondAttribute="leading" constant="16" id="Oa2-lr-97O"/>
+                                        <constraint firstItem="lqV-O6-J8T" firstAttribute="top" secondItem="n2L-UB-WNl" secondAttribute="bottom" constant="30" id="WKv-pM-DvE"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bhe-3J-v9w" secondAttribute="trailing" constant="16" id="brZ-tU-diN"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lqV-O6-J8T" secondAttribute="trailing" constant="16" id="xpY-ch-3gs"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aXb-NA-FYK" firstAttribute="leading" secondItem="4vG-h3-aHb" secondAttribute="leading" id="Agu-oB-Uhk"/>
+                            <constraint firstItem="Ecm-Ln-7DC" firstAttribute="leading" secondItem="4vG-h3-aHb" secondAttribute="leading" id="Bsu-of-68c"/>
+                            <constraint firstItem="aXb-NA-FYK" firstAttribute="bottom" secondItem="Vkx-V8-bxx" secondAttribute="bottom" id="RTs-BA-Zn2"/>
+                            <constraint firstItem="Ecm-Ln-7DC" firstAttribute="trailing" secondItem="4vG-h3-aHb" secondAttribute="trailing" id="cuP-NL-jGh"/>
+                            <constraint firstItem="Ecm-Ln-7DC" firstAttribute="bottom" secondItem="Vkx-V8-bxx" secondAttribute="bottom" id="djz-qC-hoK"/>
+                            <constraint firstItem="aXb-NA-FYK" firstAttribute="top" secondItem="Vkx-V8-bxx" secondAttribute="top" id="mf0-Z9-yIw"/>
+                            <constraint firstItem="aXb-NA-FYK" firstAttribute="trailing" secondItem="4vG-h3-aHb" secondAttribute="trailing" id="vVM-ld-k8c"/>
+                            <constraint firstItem="Ecm-Ln-7DC" firstAttribute="height" secondItem="aXb-NA-FYK" secondAttribute="height" multiplier="0.6" id="yYl-yN-WGA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4vG-h3-aHb"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Bhe-3J-v9w" id="Ibt-py-Qy8"/>
+                        <outlet property="imageView" destination="aXb-NA-FYK" id="Aqp-hp-6K0"/>
+                        <outlet property="titleLabel" destination="lqV-O6-J8T" id="E0c-O9-hTg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tLd-HF-wSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1360.8" y="44.527736131934034"/>
         </scene>
     </scenes>
 </document>

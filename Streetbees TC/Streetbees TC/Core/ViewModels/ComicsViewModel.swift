@@ -118,3 +118,15 @@ fileprivate extension ComicsViewModel {
     }
     
 }
+
+extension ComicsViewModel {
+    
+    func presentDetail(for controller: UIViewController, at index: Int) {
+        let detail = StoryboardScene.Main.comicsDetailViewController.instantiate()
+        
+        detail.comic = comic(at: index)
+        
+        controller.present(detail, animated: true, completion: nil)
+    }
+    
+}

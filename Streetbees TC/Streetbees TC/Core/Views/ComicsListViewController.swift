@@ -47,3 +47,11 @@ extension ComicsListViewController: UICollectionViewDataSource {
     
 }
 
+extension ComicsListViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.presentDetail(for: self, at: indexPath.row)
+    }
+    
+}
+
